@@ -1,33 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { WagmiConfig, createConfig } from "wagmi";
+import { sepolia } from "wagmi/chains";
+import { ConnectKitProvider, ConnectKitButton, getDefaultConfig } from "connectkit";
+
+// Choose which chains you'd like to show
+const chains = [sepolia];
+
+const config = createConfig(
+  getDefaultConfig({
+    // Required API Keys
+    alchemyId: process.env.ALCHEMY_ID, // or infuraId
+    walletConnectProjectId: process.env.WALLETCONNECT_PROJECT_ID,
+    chains,
+    // Required
+    appName: "connectkitdemo",
+  }),
+);
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <WagmiConfig config={config}>
+        <ConnectKitProvider>
+          <ConnectKitButton />
+        </ConnectKitProvider>
+      </WagmiConfig>
     </>
   )
 }
