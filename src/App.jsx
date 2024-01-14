@@ -2,8 +2,11 @@ import { WagmiConfig, createConfig } from "wagmi";
 import { sepolia } from "wagmi/chains";
 import { ConnectKitProvider, ConnectKitButton, getDefaultConfig } from "connectkit";
 import { createPublicClient, http, getContract } from 'viem'
-import { wagmiAbi } from './abi'
+import { wagmiAbi } from '../abi/abi'
 
+
+
+function App() {
 // Choose which chains you'd like to show
 const chains = [sepolia];
 
@@ -30,8 +33,6 @@ async function getTotalSupply(contract) {
   return result;
 }
 
-
-function App() {
 
   // Create contract instance
   const contract = getContract({
