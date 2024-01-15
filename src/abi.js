@@ -1,4 +1,4 @@
-export const wagmiAbi = [
+export const abi = [
     {
         "inputs":[],
         "name":"totalSupply",
