@@ -1,10 +1,14 @@
 Connectkit demo
 
+
 To run locally:
 
-`npm install`
+- Run `npm install`
 
-`npm run dev`
+- Set environment variables in the .env file.
+
+- Run `npm run dev`
+
 
 References
 - https://www.youtube.com/watch?v=XhoWXhyuW_I
