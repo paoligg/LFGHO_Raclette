@@ -5,6 +5,7 @@ import { WagmiConfig, createConfig } from "wagmi";
 import { sepolia } from "wagmi/chains";
 import { ConnectKitProvider, getDefaultConfig } from "connectkit";
 
+
 // Choose which chains you'd like to show
 const chains = [sepolia];
 

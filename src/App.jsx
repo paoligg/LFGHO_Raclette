@@ -1,4 +1,4 @@
-
+import './global.css'
 import Navbar from './component/navbar';
 
 function App() {
