@@ -1,5 +1,6 @@
 import './global.css'
 import Navbar from './component/navbar';
+import GhoInfo from './component/gho_info';
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
     <>
     <div> 
     <Navbar />
+    <GhoInfo />
 
 
 
