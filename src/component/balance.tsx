@@ -3,7 +3,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useContractRead } from 'wagmi';
-import { StableCoin_Contract } from './contracts';
+import { GHO_contract } from './contracts';
 
 
 interface GetBalanceProps {
@@ -16,7 +16,7 @@ export function Balance(props: GetBalanceProps) {
 
   const { data: readData, isLoading: readLoading, isError } = useContractRead({
     address: props.token_Address,
-    abi: StableCoin_Contract.abi,
+    abi: GHO_contract.abi,
     functionName: 'balanceOf',
     args: [props.user_Address],
     onSuccess: (data) => {
