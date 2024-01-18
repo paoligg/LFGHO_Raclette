@@ -1,17 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import VanillaTilt from 'vanilla-tilt'; // Import VanillaTilt
+import './DisplayCards.css'; // Import your CSS file
 import { useNavigate } from 'react-router-dom';
 
-type Logo = {
-  name: string;
-  imageSrc: string;
-  onClick: () => void;
-};
-
-const logosData: Logo[] = [
+const logosData = [
   {
     name: 'Rock Paper Scissors',
     imageSrc: 'src/component/images/rockpaperscissors.png',
-    onClick: () => {} // Cette fonction sera définie plus tard
+    onClick: () => {
+      alert("Let's play Rock Paper Scissors!");
+    },
   },
   {
     name: 'Colonist',
@@ -27,10 +25,10 @@ const logosData: Logo[] = [
       alert("Let's play Chess!");
     },
   },
-  // Ajoutez d'autres logos au besoin
 ];
 
-export function Games() {
+export function DisplayCards() {
+
   const navigate = useNavigate();
 
   // Modifier les fonctions onClick pour chaque jeu
@@ -39,37 +37,50 @@ export function Games() {
     }
     // Ajoutez d'autres conditions pour d'autres jeux si nécessaire
   );
+  
+  const [cardIndices, setCardIndices] = useState([0, 1, 2]);
 
-  return (
-    <div>
-      <div>
-        <DisplayGames logos={logosData} />
-      </div>
-    </div>
-  );
-}
+  useEffect(() => {
+    // Convert the NodeListOf<Element> to an array of HTMLElements
+    const cardElements = Array.from(document.querySelectorAll(".card")) as HTMLElement[];
 
-type DisplayGamesProps = {
-  logos: Logo[];
-};
+    // Initialize VanillaTilt with the array of elements
+    VanillaTilt.init(cardElements, {
+      max: 25,
+      speed: 400,
+      glare: true,
+      'max-glare': 1,
+    });
+  }, []); // Empty dependency array ensures it runs once after the initial render
 
-function DisplayGames({ logos }: DisplayGamesProps) {
-  const gridContainerStyle = {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(5, 1fr)', // Créer 5 colonnes
-    gap: '10px', // Ajouter un espacement entre les éléments de la grille
+  const rotateCards = () => {
+    // Rotate the indices of the cards
+    const rotatedIndices = [cardIndices[1], cardIndices[2], cardIndices[0]];
+    setCardIndices(rotatedIndices);
   };
 
   return (
-    <div style={gridContainerStyle}>
-      {logos.map((logo, index) => (
-        <div key={index} onClick={logo.onClick} style={{ cursor: 'pointer' }}>
-          <img src={logo.imageSrc} width="150" height="150" alt={logo.name} />
-          {logo.name}
+    <div className="container">
+      {cardIndices.map((index) => (
+        <div
+          key={index}
+          className='card'
+          data-tilt // Add this attribute for VanillaTilt to recognize the element
+        >
+          <div className='content'>
+            <img
+              src={logosData[index].imageSrc}
+              alt={logosData[index].name}
+              style={{ width: '80%', height: 'auto' , padding: '10px'}}
+            />
+            <h3>{logosData[index].name}</h3>
+            <a href="#" onClick={logosData[index].onClick}>Read More</a>
+          </div>
         </div>
       ))}
+      <button onClick={rotateCards}>Rotate Cards</button>
     </div>
   );
 }
 
-export default Games;
+export default DisplayCards;
