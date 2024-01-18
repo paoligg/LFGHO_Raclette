@@ -69,7 +69,7 @@ function DisplayGames({ logos }: DisplayGamesProps) {
         </div>
       ))}
     </div>
-  );
-}
+    );
+};
 
 export default Games;
