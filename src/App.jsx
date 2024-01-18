@@ -4,6 +4,7 @@ import './global.css';
 import Navbar from './component/navbar';
 import DisplayCards from './component/games';
 import GhoInfo from './component/gho_info';
+import GetGho from './component/getgho';
 import JoinGame from './JoinGame.jsx'; // Assurez-vous que le chemin est correct
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <hr />
           <DisplayCards />
           <hr />
+          <GetGho />
         </>
         } />
         <Route path="/JoinGame" element={<JoinGame />} />

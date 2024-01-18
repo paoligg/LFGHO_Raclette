@@ -80,7 +80,7 @@ export function DisplayCards() {
       ))}
       <button onClick={rotateCards}>Rotate Cards</button>
     </div>
-  );
-}
+    );
+};
 
 export default DisplayCards;
