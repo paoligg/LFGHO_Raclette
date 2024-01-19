@@ -7,7 +7,7 @@ const logosData = [
   {
     name: 'Rock Paper Scissors',
     wantedName: 'shifumi',
-    imageSrc: 'images/rockpaperscissors.png',
+    imageSrc: 'images/shifumi.png',
     onClick: () => {
     },
   },
@@ -21,7 +21,7 @@ const logosData = [
   {
     name: 'Chess',
     wantedName: 'chess',
-    imageSrc: 'images/chess.webp',
+    imageSrc: 'images/chess.png',
     onClick: () => {
     },
   },

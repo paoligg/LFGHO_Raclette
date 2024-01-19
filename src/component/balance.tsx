@@ -1,34 +1,46 @@
 import React from 'react';
 import { useState } from 'react';
 import { useContractRead } from 'wagmi';
-import { GHO_contract } from './contracts';
-
+import { GHO_contract, Vault_Contract } from './contracts';
 
 interface GetBalanceProps {
-  token_Address: `0x${string}`;
   user_Address: `0x${string}`;
 }
 
 export function Balance(props: GetBalanceProps) {
   const [userBalance, setUserBalance] = useState<number | undefined>(undefined);
+  const [userRBalance, setUserRBalance] = useState<number | undefined>(undefined);
 
   const { data: readData, isLoading: readLoading, isError } = useContractRead({
-    address: props.token_Address,
-    abi: GHO_contract.abi,
+    ...GHO_contract,
     functionName: 'balanceOf',
     args: [props.user_Address],
     onSuccess: (data) => {
-      // Convert BigInt to a readable number and then to JavaScript number
       const readableBalance = Number(data.toString()) * 10**-18;
       setUserBalance(readableBalance);
+    },
+  });
+  const { data: readRData, isLoading: readRLoading, isError:isRError } = useContractRead({
+    ...Vault_Contract,
+    functionName: 'balanceOf',
+    args: [props.user_Address],
+    onSuccess: (data) => {
+      const readableBalance = Number(data.toString()) * 10**-18;
+      setUserRBalance(readableBalance);
     },
   });
 
   return (
     <div>
-        <span className=''>
+        <a className='border border-solid border-white rounded p-2' href={`https://sepolia.etherscan.io/address/${GHO_contract.address}`}>
         {userBalance?.toFixed(0)} GHO
-        </span>
+        </a>
+        {props.user_Address!=Vault_Contract.address ? (
+        <a className='border border-solid border-white rounded p-2 ml-5' href={`https://sepolia.etherscan.io/address/${Vault_Contract.address}`}>
+        {userRBalance?.toFixed(0)} rGHO
+        </a>
+        ): null}
+
     </div>
    
   )

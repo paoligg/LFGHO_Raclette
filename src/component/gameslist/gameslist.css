@@ -45,3 +45,15 @@
     background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
     z-index: 50;
 }
+.importantText {
+    grid-area: importantText; /* Assign to the "importantText" grid area */
+    color: rgb(255, 127, 80);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center horizontally */
+    text-align: center; /* Center text */
+    font-size: 50px; /* Set font size to 24 pixels */
+    font-weight: bold; /* Set font weight to bold */
+}

@@ -9,7 +9,8 @@
       "importantText importantText gamesCarousel"
       "separation separation separation"
       "howItWorks howItWorks howItWorks"
-      "gho_info gho_info gho_info";
+      "gho_info gho_info gho_info"
+      "footer footer footer";
 
       grid-gap: 3%;
       padding:2%;
@@ -77,6 +78,11 @@
   
   .gho_info {
     grid-area: gho_info; /* Assign to the "gho_info" grid area */
+   
+    padding: 20px;
+  }
+  .footer {
+    grid-area: footer; /* Assign to the "footer" grid area */
    
     padding: 20px;
   }

@@ -3,12 +3,11 @@ import { Link as ScrollLink } from 'react-scroll';
 import './landing_page.css';
 import DisplayCards from '../games_carrousel/games';
 import GhoInfo from '../gho_info';
+import Footer from "../footer/footer";
 
 const LandingPage = () => {
   return (
     <div className="grid-container">
-      <div className="navbar"></div>
-
       <div className="importantText">
         <div className="mainText">
           Play over 50+ different games with your friends or other online players
@@ -30,6 +29,7 @@ const LandingPage = () => {
       <div className="gho_info">
         <GhoInfo />
       </div>
+    <Footer />
     </div>
   );
 };
