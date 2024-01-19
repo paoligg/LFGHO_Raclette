@@ -1,0 +1,70 @@
+
+.container{
+  margin : 0;
+  padding : 0;
+  box-sizing : border-box;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position : relative;
+ 
+}
+
+
+.container .card{
+  position: relative;
+  width: 200px;
+  height: 300px;
+  margin: 20px;
+  box-shadow: 20px -20px  rgba(255,127,80,1), 0px 0px 50px rgba(255,127,80,1);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:  rgba(255,255,255,0.1);
+  transition: 0.5s;
+  border-top: 5px solid rgba(255,127,80,0.1);
+  border-left: 5px solid rgba(34, 23, 19, 0.1);
+  border-right: 5px solid rgba(255,127,80,0.1);
+  border-bottom: 5px solid rgba(255,127,80,0.1);
+  backdrop-filter: blur(10px);
+}
+
+
+.container .card .content{
+  display: flex ;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+  top : 0px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  font-size: large;
+  color : white;
+  
+}
+
+
+.button {
+  background-color: rgba(255,127,80,1);/* Button background color */
+  color: #fff; /* Text color */
+  border: none; /* Remove button border */
+  padding-left: 1px; /* Adjust padding as needed */
+  margin-left:10px;
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Change cursor on hover */
+  transition: background-color 0.3s ease; /* Add a smooth background color transition */
+  border-radius: 10px;
+  box-shadow:  0px 0px 50px rgba(255,127,80,1);
+}
+
+/* Style the button on hover */
+.button:hover {
+  background-color: rgba(255,127,80,0.8);
+}
