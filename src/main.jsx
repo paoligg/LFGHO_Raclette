@@ -4,6 +4,7 @@ import App from './App.jsx'
 import { WagmiConfig, createConfig } from "wagmi";
 import { sepolia } from "wagmi/chains";
 import { ConnectKitProvider, getDefaultConfig } from "connectkit";
+import './global.css';
 
 
 // Choose which chains you'd like to show

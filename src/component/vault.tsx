@@ -65,7 +65,7 @@ const Vault = ( props: GetBalanceProps ) => {
   return (
     <div>
       <h2>Vault</h2>
-      <p>Current Vault Balance: <Balance user_Address={props.user_Address} token_Address={Vault_Contract.address}/> Tokens</p>
+      <span>Current Vault Balance: <Balance user_Address={props.user_Address} token_Address={Vault_Contract.address}/> Tokens</span>
       <div>
         <input
           type="text"
