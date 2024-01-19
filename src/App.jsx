@@ -1,33 +1,19 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './global.css';
-import Navbar from './component/navbar';
-import DisplayCards from './component/games';
-import GhoInfo from './component/gho_info';
-import GetGho from './component/getgho';
-import CreateGame from './component/CreateGame';
-import JoinGame from './JoinGame.jsx'; 
+import JoinGame from './JoinGame'; // Assurez-vous que le chemin est correct
+import LandingPage from './component/landing_page/landing_page.tsx';
+import Layout from './layout';
 
 function App() {
   return (
     <Router>
-      <Navbar />
-      
       <Routes>
-        <Route path="/connectkitdemo/" 
-        element={
-          <>
-          <GhoInfo />
-          <hr />
-          <DisplayCards />
-          <hr />
-          <GetGho />
-        </>
-        } />
-        <Route path="/JoinGame" element={<JoinGame />} />
-        
+        <Route path="/" element={<Layout />}>
+          <Route index element={ <LandingPage /> } />
+          <Route path="/JoinGame/" element={<JoinGame />} />
+        </Route >
       </Routes>
-     
     </Router>
 
   );

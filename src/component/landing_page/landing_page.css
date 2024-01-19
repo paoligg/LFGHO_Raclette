@@ -1,0 +1,83 @@
+.grid-container {
+    display: grid;
+    
+    grid-template-columns: 4fr 4fr 2fr;
+    grid-template-rows: 1.5fr 4fr 2fr 2fr 4fr;
+    /* Define grid areas */
+    grid-template-areas:
+      "navbar navbar navbar"
+      "importantText importantText gamesCarousel"
+      "separation separation separation"
+      "howItWorks howItWorks howItWorks"
+      "gho_info gho_info gho_info";
+
+      grid-gap: 3%;
+      padding:2%;
+      background: linear-gradient(180deg, rgba(5,5,5,1) 25%, rgba(255,136,0,1) 100%);
+    }
+  
+  .navbar {
+    grid-area: navbar; /* Assign to the "navbar" grid area */
+   
+    color: #fff; /* Text color */
+    padding: 10px;
+  }
+  
+  .importantText {
+    grid-area: importantText; /* Assign to the "importantText" grid area */
+    color : rgb(255,127,80);
+    padding: 20px;
+    display:flex ;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+  .mainText {
+    font-size: 24px; /* Font size */
+    font-weight: bold; /* Font weight */
+    margin-bottom: 10px; /* Spacing at the bottom */
+  }
+  .subText {
+    font-size: 18px; /* Font size */
+    
+    margin-bottom: 10px; /* Spacing at the bottom */
+  }
+  
+  /* Styling for the callToAction */
+  .callToAction {
+    font-size: 20px; /* Font size */
+    background-color: #333; /* Background color */
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Padding */
+    border-radius: 5px; /* Border radius */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+  }
+  
+  .callToAction:hover {
+    background-color: #555; /* Background color on hover */
+  }
+  .gamesCarousel {
+    grid-area: gamesCarousel; /* Assign to the "gamesCarousel" grid area */
+   
+    padding: 20px;
+  }
+
+  .separation {
+    grid-area: separation; /* Assign to the "separation" grid area */
+   
+    padding: 10px;
+  }
+
+  .howitworks {
+    grid-area: howItWorks; /* Assign to the "separation" grid area */
+   
+    padding: 10px;
+  }
+  
+  .gho_info {
+    grid-area: gho_info; /* Assign to the "gho_info" grid area */
+   
+    padding: 20px;
+  }
+  
