@@ -3,14 +3,12 @@ import { Vault_Contract, GHO_contract } from './contracts';
 import { useAccount, useContractRead, useContractWrite } from 'wagmi';
 import React from 'react';
 
-const CreateGame= () =>{
+const CreateGame= (gamename:string) =>{
     const { address: account } = useAccount();
 
     const [players, setPlayers] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
     const [playerPrice, setPlayerPrice] = useState([BigInt(0)]);
-    const [isReady, setIsReady] = useState(false);
-
 
     const playerInputs = Array.from({ length: players }, (_, index) => {
         const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,13 +34,12 @@ const CreateGame= () =>{
         const sum = playerPrice.reduce((acc, curr) => acc + curr, BigInt(0));
         if (sum === BigInt(100)) {
             if (account !== undefined) {
-                await createGame({ args: [BigInt(Number(totalPrice)), playerPrice, BigInt(players)] });
+                await createGame({ args: [gamename, BigInt(Number(totalPrice)), playerPrice] });
             }
         } else {
             console.log("Sum of player prices does not equal total price");
         }
     }
-
 
     return (
         <div>
