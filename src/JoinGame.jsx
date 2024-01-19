@@ -1,16 +1,13 @@
-// JoinGame.jsx
 import React from 'react';
-import GetGame from './component/GetGame';
-
+import GamesList from './component/gameslist/GamesList';
+import { useParams } from 'react-router-dom';
+import './component/gameslist/gameslist.css';
 
 function JoinGame() {
+  const { wantedName } = useParams();
   return (
-    <div>
-      <h1>Rock Paper Scissors Game</h1>
-      <button onClick={() => console.log('Joining game...')}>
-          Join a Game 
-      </button>
-      <GetGame/>
+    <div className="games-list"> 
+      <GamesList wantedname={wantedName} />
     </div>
   );
 }

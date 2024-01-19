@@ -83,30 +83,33 @@ const GetGame = ({ index, wantedGame }: { index: number, wantedGame: string }) =
     }
 
     return (
-        <div className="container">
-            <div className={`game ${bgColor} textColor-black`}>
-                {gameName === wantedGame ? (
-                    <div className="content">
-                        <div>Game Id: {id}</div>
-                        <div>Number Of Players: {numberOfPlayers}</div>
-                        <div>Total Price: {totalPrice / 1e18} R-GHO</div>
-                        <div>
-                            {repartition.map((percentage, index) => (
-                                <div key={index}>
-                                    {getOrdinalSuffix(index + 1)} : {percentage}%
-                                </div>
-                            ))}
+        <div>
+            {gameName === wantedGame ? (
+                <div className="container">
+                    <div className={`game ${bgColor} textColor-black`}>
+                        <div className="content">
+                            <div>Game Id: {id}</div>
+                            <div>Number Of Players: {numberOfPlayers}</div>
+                            <div>Total Price: {totalPrice / 1e18} R-GHO</div>
+                            <div>
+                                {repartition.map((percentage, index) => (
+                                    <div key={index}>
+                                        {getOrdinalSuffix(index + 1)} : {percentage}%
+                                    </div>
+                                ))}
+                            </div>
+                            <div>
+                                Players: {participants.map(address => `${address.slice(0, 6)}..`).join(' ')}
+                            </div>
+                            <br />
+                            <div>{gameState}</div>
+                            <br />
+                            {!started ? <EnterGame gameid={id} /> : null}
                         </div>
-                        <div>
-                            Players: {participants.map(address => `${address.slice(0, 6)}..`).join(' ')}
-                        </div>
-                        <br />
-                        <div>{gameState}</div>
-                        <br />
-                        {!started ? <EnterGame gameid={id} /> : null}
                     </div>
-                ) : null}
             </div>
+            ) : null}
+
         </div>
 
 

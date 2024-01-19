@@ -6,23 +6,23 @@ import { useNavigate } from 'react-router-dom';
 const logosData = [
   {
     name: 'Rock Paper Scissors',
-    imageSrc: 'src/component/images/rockpaperscissors.png',
+    wantedName: 'shifumi',
+    imageSrc: 'images/rockpaperscissors.png',
     onClick: () => {
-      alert("Let's play Rock Paper Scissors!");
     },
   },
   {
     name: 'Colonist',
-    imageSrc: 'src/component/images/colonist.png',
+    wantedName: 'colonist',
+    imageSrc: 'images/colonist.png',
     onClick: () => {
-      alert("Let's play Colonist!");
     },
   },
   {
     name: 'Chess',
-    imageSrc: 'src/component/images/chess.webp',
+    wantedName: 'chess',
+    imageSrc: 'images/chess.webp',
     onClick: () => {
-      alert("Let's play Chess!");
     },
   },
 ];
@@ -33,9 +33,8 @@ export function DisplayCards() {
 
   // Modifier les fonctions onClick pour chaque jeu
   logosData.forEach(logo => {
-      logo.onClick = () => navigate('/JoinGame'); // Assurez-vous que le chemin correspond à votre route
+      logo.onClick = () => navigate(`/JoinGame/${logo.wantedName}`); // Assurez-vous que le chemin correspond à votre route
     }
-    // Ajoutez d'autres conditions pour d'autres jeux si nécessaire
   );
   
   const [cardIndices, setCardIndices] = useState([0, 1, 2]);

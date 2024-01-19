@@ -31,20 +31,16 @@ export function DisplayCards() {
 
   const navigate = useNavigate();
 
-  // Modifier les fonctions onClick pour chaque jeu
   logosData.forEach(logo => {
-      logo.onClick = () => navigate('/JoinGame'); // Assurez-vous que le chemin correspond à votre route
+      logo.onClick = () => navigate('/JoinGame'); 
     }
-    // Ajoutez d'autres conditions pour d'autres jeux si nécessaire
   );
   
   const [cardIndices, setCardIndices] = useState([0, 1, 2]);
 
   useEffect(() => {
-    // Convert the NodeListOf<Element> to an array of HTMLElements
     const cardElements = Array.from(document.querySelectorAll(".card")) as HTMLElement[];
 
-    // Initialize VanillaTilt with the array of elements
     VanillaTilt.init(cardElements, {
       max: 25,
       speed: 400,
