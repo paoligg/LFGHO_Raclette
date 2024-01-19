@@ -1,6 +1,6 @@
 // JoinGame.jsx
 import React from 'react';
-
+import GetGame from './component/GetGame';
 
 
 function JoinGame() {
@@ -8,8 +8,9 @@ function JoinGame() {
     <div>
       <h1>Rock Paper Scissors Game</h1>
       <button onClick={() => console.log('Joining game...')}>
-        Join a Game
+          Join a Game 
       </button>
+      <GetGame/>
     </div>
   );
 }
