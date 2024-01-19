@@ -4,7 +4,8 @@ import './global.css';
 import Navbar from './component/navbar';
 import DisplayCards from './component/games_carrousel/games.tsx';
 import GhoInfo from './component/gho_info';
-import GetGho from './component/getgho/getgho.tsx';
+import GetGho from './component/getgho';
+import CreateGame from './component/CreateGame';
 import JoinGame from './JoinGame.jsx'; // Assurez-vous que le chemin est correct
 import LandingPage from './component/landing_page/landing_page.tsx';
 
