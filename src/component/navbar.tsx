@@ -15,7 +15,7 @@ function Navbar() {
   return (
     <nav className="bg-black text-white h-20 px-4 flex items-center justify-between fixed top-0 w-full z-10">
       <button onClick={handleRedirectToHome} className="flex items-center">
-        <img src="src/component/images/logo.png" alt="logo" height="80" width="80" />
+        <img src="images/logo.png" alt="logo" height="80" width="80" />
         <span className="text-lg font-bold ml-8 text-3xl">LFRaclette</span>
       </button>
       <div className="flex items-center space-x-4">

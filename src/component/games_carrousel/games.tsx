@@ -66,7 +66,7 @@ export function DisplayCards() {
           className='card'
           data-tilt // Add this attribute for VanillaTilt to recognize the element
         >
-          <a href="#" onClick={logosData[index].onClick}> 
+          <a href="" onClick={logosData[index].onClick}> 
             <div className='content'>
               <img
                 src={logosData[index].imageSrc}

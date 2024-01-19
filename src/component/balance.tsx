@@ -26,7 +26,7 @@ export function Balance(props: GetBalanceProps) {
 
   return (
     <div>
-        <span className='border border-solid border-white rounded p-2'>
+        <span className=''>
         {userBalance?.toFixed(0)} GHO
         </span>
     </div>

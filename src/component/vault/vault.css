@@ -1,0 +1,103 @@
+/* Styling for the Vault component */
+.get-gho-form {
+    position: relative; /* Add this line to make it a reference for absolute positioning */
+    display: flex;
+    flex-direction: column;  
+    
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.close-button {
+    background-color: transparent;
+    color: rgba(255, 127, 80, 1);
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0; /* Position it at the top of the form box */
+    left: 85%; /* Position it at the left of the form box */
+    padding: 0;
+}
+
+.form-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.form-field {
+    margin-bottom: 15px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+}
+
+.action-button {
+    background-color: rgba(255,127,80,1);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: rgba(235,107,60,1);
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+/* Styling for each dot */
+.phase {
+    width: 20px;
+    height: 20px;
+    background-color: #ccc; /* Grey color for phases */
+    border-radius: 50%;
+    margin: 0 10px; /* Adjust spacing between phases */
+    position: relative; /* Needed for pseudo-elements */
+}
+
+/* Styling for the lines between phases (on the right side) */
+.phase::after {
+    content: '';
+    position: absolute;
+    right: -15px; /* Adjust the position of the line to the right */
+    top: 50%; /* Center the line vertically */
+    height: 2px; /* Adjust the line thickness */
+    width: 10px; /* Adjust the line length */
+    background-color: #ccc; /* Grey color for lines */
+}
+
+.dot-label {
+    font-size: 14px;
+    text-align: center;
+    position: absolute;
+    top: 30px; /* Adjust the distance from the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+}
+
+.green {
+    background-color: rgba(255,136,0,1) !important; /* Important to override previous styles */
+}
