@@ -23,10 +23,50 @@ const LandingPage = () => {
       <div className="gamesCarousel">
         <DisplayCards />
       </div>
+      <div className="teamSection">
+      <div className="teamTitle">Our Team</div>
+      <div className="teamMembers">
+        
+        <div className="teamMember">
+          <a href="https://www.linkedin.com/in/antoine-sirot/">
+            <img src="/images/antoine.jpg" alt="Antoine" className="roundImage"/>
+          </a>
+          <div className="memberName">Antoine</div>
+        </div>
+        <div className="teamMember">
+          <a href="https://www.linkedin.com/in/hugo-schneegans/">
+            <img src="/images/hugo.jpeg" alt="Hugo" className="roundImage" />
+          </a>
+          <div className="memberName">Hugo</div>
+        </div>
+        <div className="teamMember">
+          <a href="https://www.linkedin.com/in/paolig-blan/">
+            <img src="/images/paolig.jpg" alt="Paolig" className="roundImage" />
+          </a>
+          <div className="memberName">Paolig</div>
+        </div>
+        <div className="teamMember">
+          <a href="https://www.linkedin.com/in/jean-teyssedre-106145258/">
+            <img src="/images/jean.jpeg" alt="Jean" className="roundImage" />
+          </a>
+          <div className="memberName">Jean</div>
+        </div>
+        <div className="teamMember">
+          <a href="https://www.linkedin.com/in/arthur-liot/">
+            <img src="/images/arthur.jpeg" alt="Arthur" className="roundImage" />
+          </a>
+          <div className="memberName">Arthur</div>
+        </div>
+        </div>
+        </div>
 
-      <div className="separation">Trusted By</div>
+      <div className="howItWorks">
+        <div className="mainText">
+          How it works 
+        </div>
+        <div className="subText">Featuring GHO, the stablecoin from Aave</div>
+      </div>
 
-      <div className="howItWorks">How it works</div>
 
       <div className="gho_info">
         <GhoInfo />

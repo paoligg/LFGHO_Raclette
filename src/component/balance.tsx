@@ -32,18 +32,16 @@ export function Balance(props: GetBalanceProps) {
 
   return (
     <div>
-        <a className='border border-solid border-white rounded p-2' href={`https://sepolia.etherscan.io/address/${GHO_contract.address}`}>
+      <a className='border border-solid border-white rounded p-2 hover:bg-orange-500' href={`https://sepolia.etherscan.io/address/${GHO_contract.address}`}>
         {userBalance?.toFixed(0)} GHO
+      </a>
+      {props.user_Address !== Vault_Contract.address && (
+        <a className='border border-solid border-white rounded p-2 ml-5 hover:bg-orange-500' href={`https://sepolia.etherscan.io/address/${Vault_Contract.address}`}>
+          {userRBalance?.toFixed(0)} rGHO
         </a>
-        {props.user_Address!=Vault_Contract.address ? (
-        <a className='border border-solid border-white rounded p-2 ml-5' href={`https://sepolia.etherscan.io/address/${Vault_Contract.address}`}>
-        {userRBalance?.toFixed(0)} rGHO
-        </a>
-        ): null}
-
+      )}
     </div>
-   
-  )
+  );
 }
 
 export default Balance;

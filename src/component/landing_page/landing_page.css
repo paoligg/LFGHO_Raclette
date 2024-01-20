@@ -7,6 +7,7 @@
     grid-template-areas:
       "importantText importantText gamesCarousel"
       "separation separation separation"
+      "teamMembers teamMembers teamMembers"
       "howItWorks howItWorks howItWorks"
       "gho_info gho_info gho_info"
       "footer footer footer";
@@ -75,6 +76,50 @@
     grid-area: gho_info; /* Assign to the "gho_info" grid area */
    
     padding: 20px;
+  }
+
+  .teamSection {
+    grid-area: teamMembers; 
+    text-align: center; /* Center-aligns the title and team members */
+    margin-bottom: 30px; /* Adds space below the entire team section */
+  }
+  
+  .teamMembers {
+    display: flex; /* Aligns items in a row */
+    justify-content: center; /* Centers items horizontally */
+    gap: 80px; /* Adds space between items */
+    background-color: #000000;
+    padding: 2%;
+    border-radius: 10px;
+
+  }
+  
+  .teamMember {
+    flex: none; /* Prevents flex items from growing or shrinking */
+
+  }
+  
+  .roundImage {
+    border-radius: 50%; /* Makes the image round */
+    width: 200px; /* Sets a fixed width */
+    height: 200px; /* Sets a fixed height */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    box-shadow:  rgb(255,127,80) 0px 0px 20px;
+    transition: filter 0.3s ease;
+  }
+  .roundImage:hover {
+    filter: blur(3px);
+  }
+  .memberName {
+    margin-top: 10px; /* Adds space between the image and the name */
+    font-size: 20px; /* Adjusts the font size */
+    color:  rgb(255,127,80); /* Sets the text color */
+  }
+  .teamTitle {
+    font-size: 48px; /* Sets a large font size for the title */
+    color: rgb(255,127,80); /* Sets the text color */
+    margin-bottom: 20px; /* Adds space below the title */
+    font-weight: bold;
   }
   .footer {
     grid-area: footer; /* Assign to the "footer" grid area */
