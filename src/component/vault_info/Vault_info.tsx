@@ -39,7 +39,7 @@ const VaultInfo = () => {
         <strong>Total Number of Games:</strong> <span className='underline'>{numberOfGames}</span>
       </div>
       <div>
-        <strong>Total R-GHO Supply:</strong> <span className='underline'>${totalRghoSupply}</span>
+        <strong>Total R-GHO Supply:</strong> <span className='underline'>$ {totalRghoSupply.toFixed(2)}</span>
       </div>
     </div>
   );

@@ -16,7 +16,7 @@ const LandingPage = () => {
         </div>
         <div className="subText">Featuring GHO, the stablecoin from Aave</div>
         
-        <div className="mainText text-white border p-4"><VaultInfo/></div>
+        <div className="mainText text-white  p-4"><VaultInfo/></div>
         <ScrollLink to="gho_info" smooth={true} duration={1000}>
           <div className="callToAction">Get some R-GHO now !</div>
         </ScrollLink>
