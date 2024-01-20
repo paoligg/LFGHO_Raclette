@@ -31,6 +31,11 @@ We are passionate about creating a new use for the GHO token. We developed a gam
 - **Footer:** A standard footer with the date and GitHub repository link.
 
 ## Technology Stack
+
+### General Architecture
+
+![LFRaclette_Architecture](https://github.com/paoligg/LFGHO_Raclette/assets/101109062/6e8c6ee9-c247-4b1c-a2d3-f4cf181e7364)
+
 ### Frontend Technologies
 
 - **ConnectKit:** A toolset for easily integrating wallet connection functionality in Web3 applications, enhancing user experience with blockchain interaction.
