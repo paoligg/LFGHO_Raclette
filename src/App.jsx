@@ -4,6 +4,7 @@ import './global.css';
 import JoinGame from './JoinGame'; 
 import LandingPage from './component/landing_page/landing_page.tsx';
 import Layout from './layout';
+import GamesList from './component/gameslist/GamesList.tsx';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<LandingPage />} />
-          <Route path="/JoinGame/:wantedName" element={<JoinGame />} />
+          <Route path="/JoinGame/:wantedname" element={<GamesList />} />
         </Route>
       </Routes>
     </Router>

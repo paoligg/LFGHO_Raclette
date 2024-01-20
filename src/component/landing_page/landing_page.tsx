@@ -3,7 +3,6 @@ import { Link as ScrollLink } from 'react-scroll';
 import './landing_page.css';
 import DisplayCards from '../games_carrousel/games';
 import GhoInfo from '../gho_info';
-import Footer from "../footer/footer";
 
 const LandingPage = () => {
   return (
@@ -31,7 +30,6 @@ const LandingPage = () => {
       <div className="gho_info">
         <GhoInfo />
       </div>
-    <Footer />
     </div>
   );
 };

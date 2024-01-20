@@ -2,12 +2,18 @@ import { useState, useEffect } from 'react';
 import { Vault_Contract, GHO_contract } from '../contracts';
 import { useAccount, useContractRead, useContractWrite } from 'wagmi';
 import React from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import CreateGame from '../creategame/CreateGame';
 import GetGame from '../get_game/GetGame';
 import './gameslist.css';
-import Footer from "../footer/footer";
 
-const GamesList = ({wantedname} :{wantedname:string}) => {
+const GamesList = () => {
+    const { wantedname } = useParams();
+    const navigate = useNavigate();
+    if (wantedname === undefined) {
+        navigate("/");
+        throw new Error("No game name provided");
+    }
     const [gamesnumber, setGamesnumber] = useState(0);
     const { data: numberGames } = useContractRead({
         ...Vault_Contract,
@@ -17,6 +23,7 @@ const GamesList = ({wantedname} :{wantedname:string}) => {
     useEffect(() => {
         if (numberGames) {
             setGamesnumber(Number(numberGames));
+            console.log("number of games: ", numberGames);
         }
     }, [numberGames]);
     
@@ -32,26 +39,13 @@ const GamesList = ({wantedname} :{wantedname:string}) => {
 
       const backgroundImageUrl = `/images/${wantedname}.png`;
 
-        const gamesListStyle = {
-            minHeight: '100vh',
-            width: '100%',
-            margin: 0,
-            padding: '2%',
-            backgroundImage: `url(${backgroundImageUrl}), linear-gradient(180deg, rgba(5,5,5,1) 25%, rgba(255,136,0,1) 100%)`,
-            backgroundSize: 'auto 300px, cover',
-            backgroundPosition: 'center center',
-            backgroundRepeat: 'no-repeat, no-repeat',
-            display: 'flex',
-        };
-
-
       return (
-        <div className="games-list">
-            <h1 className="importantText">LET'S F******* PLAY {wantedname.toUpperCase()}</h1> 
-            <button onClick={openModal} className="create-game-button">
+        <div className="flex items-center flex-col">
+            <h1 className=" text-[#ff8150] p-5 w-full text-center text-5xl font-bold">LET'S F******* PLAY {wantedname.toUpperCase()}</h1> 
+            <button onClick={openModal} className=" bg-orange-950 hover:bg-orange-600 rounded-md w-4/5 text-gray-50 py-2 ">
                 Create Game
             </button>
-            <div style={gamesListStyle}>
+            <div style={{backgroundImage : `url(${backgroundImageUrl})`}} className='w-4/5 min-h-[50vh] bg-no-repeat bg-center flex flex-row p-10 mt-5 mx-5 border-orange-300 border-solid border-2 rounded-lg bg-[300px_auto] flex-wrap'>
             {isModalOpen && (
                 <div className="modal">
                     <div className="modal-content">
@@ -61,12 +55,11 @@ const GamesList = ({wantedname} :{wantedname:string}) => {
             )}
     
                 {Array.from({ length: gamesnumber }, (_, num) => (
-                  <div >
-                    <GetGame index={num} wantedGame={wantedname} />
+                  <div key={num}>
+                    <GetGame index={num} wantedGame={wantedname}  />
                   </div>
                 ))}
             </div>
-            <Footer />        
         </div>
     );
 };
