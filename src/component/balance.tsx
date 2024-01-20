@@ -16,16 +16,16 @@ export function Balance(props: GetBalanceProps) {
     functionName: 'balanceOf',
     args: [props.user_Address],
     onSuccess: (data) => {
-      const readableBalance = Number(data.toString()) * 10**-18;
+      const readableBalance = Number(data.toString()) * 10 ** -18;
       setUserBalance(readableBalance);
     },
   });
-  const { data: readRData, isLoading: readRLoading, isError:isRError } = useContractRead({
+  const { data: readRData, isLoading: readRLoading, isError: isRError } = useContractRead({
     ...Vault_Contract,
     functionName: 'balanceOf',
     args: [props.user_Address],
     onSuccess: (data) => {
-      const readableBalance = Number(data.toString()) * 10**-18;
+      const readableBalance = Number(data.toString()) * 10 ** -18;
       setUserRBalance(readableBalance);
     },
   });
@@ -33,11 +33,11 @@ export function Balance(props: GetBalanceProps) {
   return (
     <div>
       <a className='border border-solid border-white rounded p-2 hover:bg-orange-500' href={`https://sepolia.etherscan.io/address/${GHO_contract.address}`}>
-        {userBalance?.toFixed(0)} GHO
+        {userBalance?.toFixed(2)} GHO
       </a>
       {props.user_Address !== Vault_Contract.address && (
         <a className='border border-solid border-white rounded p-2 ml-5 hover:bg-orange-500' href={`https://sepolia.etherscan.io/address/${Vault_Contract.address}`}>
-          {userRBalance?.toFixed(0)} rGHO
+          {userRBalance?.toFixed(2)} rGHO
         </a>
       )}
     </div>
