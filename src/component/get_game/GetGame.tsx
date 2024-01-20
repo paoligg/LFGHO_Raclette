@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, RefObject } from 'react';
 import { Vault_Contract, GHO_contract } from '../contracts';
 import { useAccount, useContractRead, useContractWrite } from 'wagmi';
 import EnterGame from '../EnterGame';
+import DistributeRewards from '../DistributeRewards';
 import VanillaTilt from 'vanilla-tilt';
 import './GetGame.css';
 
@@ -14,6 +15,8 @@ const GetGame = ({ index, wantedGame }: { index: number; wantedGame: string }) =
     const [participants, setParticipants] = useState(['']);
     const [started, setStarted] = useState(false);
     const [finished, setFinished] = useState(false);
+    const [showDistributeModal, setShowDistributeModal] = useState(false);
+
 
     const cardRef = useRef<HTMLDivElement | null>(null);
 
@@ -130,12 +133,17 @@ const GetGame = ({ index, wantedGame }: { index: number; wantedGame: string }) =
                             </div>
                             {!started ? (
                                 <EnterGame gameid={id} />
-                            ) : null}
+                            ) : (!finished && (
+                                <DistributeRewards gameid={id} numberOfPlayers={numberOfPlayers} onClose={() => setShowDistributeModal(false)} />
+                            ))}
+
+
                         </div>
                     </div>
                 </div>
-            ) : null}
-        </div>
+            ) : null
+            }
+        </div >
     );
 };
 
