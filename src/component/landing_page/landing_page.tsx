@@ -71,7 +71,7 @@ const LandingPage = () => {
             <p className="simple">Simple !</p>
           </li>
           <li className="how-it-works-list-item">
-            <p>For a greater challenge and higher risk/reward. Bet F-GHO in games to potentially win more and claim extra GHO upon cashing out!</p>
+            <p>For a greater challenge and higher risk/reward. Bet R-GHO in games to potentially win more and claim extra GHO upon cashing out!</p>
             <p className="expert">Expert !</p>
           </li>
         </ul>

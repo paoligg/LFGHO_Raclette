@@ -2,7 +2,7 @@
     display: grid;
     
     grid-template-columns: 4fr 4fr 2fr;
-    grid-template-rows: 2fr 2fr 2fr 2fr 0.2fr;
+    grid-template-rows: 3fr 2fr 2fr 2fr 0.2fr;
     /* Define grid areas */
     grid-template-areas:
       "importantText importantText gamesCarousel"
@@ -173,5 +173,38 @@
     color: rgb(255,127,80); /* Different color for expert */
     font-size: 2rem; /* Same larger font size for consistency */
     margin-top: 0.5rem; /* Add some space above the emphasis text */
+  }
+  
+  .teamMember {
+    position: relative; /* Ensure the container is relatively positioned */
+    /* ... other styles ... */
+  }
+  
+  .teamMember .roundImage {
+    /* ... existing styles ... */
+    transition: filter 0.3s ease;
+    z-index: 1; /* Ensure the image is above the pseudo-element */
+  }
+  
+  .teamMember::after {
+    content: ''; /* Required for pseudo-elements */
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%; /* Cover the entire container */
+    height: 100%; /* Cover the entire container */
+    background: url('../../../public/images/linkedin_logo.png') no-repeat center center; /* Use the correct path */
+    background-size: 30%; /* Adjust size of logo */
+    opacity: 0; /* Logo is invisible initially */
+    transition: opacity 0.3s ease;
+    z-index: 2; /* Bring it in front of the image */
+  }
+  
+  .teamMember:hover::after {
+    opacity: 1; /* Shows the GHO logo on hover */
+  }
+  
+  .teamMember:hover .roundImage {
+    filter: blur(3px); /* Blurs the image on hover */
   }
   

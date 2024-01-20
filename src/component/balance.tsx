@@ -37,7 +37,7 @@ export function Balance(props: GetBalanceProps) {
       </a>
       {props.user_Address !== Vault_Contract.address && (
         <a className='border border-solid border-white rounded p-2 ml-5 hover:bg-orange-500' href={`https://sepolia.etherscan.io/address/${Vault_Contract.address}`}>
-          {userRBalance?.toFixed(2)} rGHO
+          {userRBalance?.toFixed(2)} R-GHO
         </a>
       )}
     </div>
