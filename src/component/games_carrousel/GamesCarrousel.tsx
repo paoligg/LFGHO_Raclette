@@ -46,7 +46,7 @@ export function DisplayCards() {
   const navigate = useNavigate();
 
   logosData.forEach(logo => {
-      logo.onClick = () => navigate(`/JoinGame/${logo.wantedName}`);
+      logo.onClick = () => navigate(`/${logo.wantedName}`);
     }
   );
   
