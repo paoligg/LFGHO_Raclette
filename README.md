@@ -2,11 +2,11 @@
 
 ## Overview
 
-LFGHO Raclette is a Web3 project developed for the LFGHO Hackathon. This project leverages blockchain technology to innovate in the use of Vault to create new features for the GHO Token. Our platform consists of two main components: the front-end application (found in this repository) and the smart contracts that handle the blockchain interactions (found in our [Smart Contracts Repository](https://github.com/AntoineSirot/LFGHO_Raclette_SmartContracts)).
+LFGHO Raclette is a Web3 project developed for the LFGHO Hackathon. This project leverages blockchain technology to innovate in the use of Vault to create new features for the [GHO Token](https://sepolia.etherscan.io/address/0xc4bF5CbDaBE595361438F8c6a187bDc330539c60). Our platform consists of two main components: the front-end application (found in this repository) and the smart contracts that handle the blockchain interactions (found in our [Smart Contracts Repository](https://github.com/AntoineSirot/LFGHO_Raclette_SmartContracts) or at this Address : [0xD18D03cF7D79a3f9B51D3595db169cfCcC3E862A](https://sepolia.etherscan.io/address/0xd18d03cf7d79a3f9b51d3595db169cfccc3e862a)).
 
 ## Team 
 
-We are the LFGHO Raclette team, composed of 5 friends working together on this project. As students, we learned a lot during these last 10 days, realizing our potential when motivated and cooperative.
+We are the LFGHO Raclette team, composed of 5 friends working together on this project. As students, we learnt a lot during these last 10 days, realizing our potential when motivated and cooperative.
 
 ## How does it work? 
 
@@ -67,7 +67,7 @@ These technologies collectively provide a robust framework for building, testing
 ## Getting Started
 ### Deployed Project
 
-Our project is deployed on Vercel for easy access: [Deployed Project Link](https://vercel.com/link-to-your-project)
+Our project is deployed on Vercel for easy access: [Deployed Project Link](https://lfraclette.vercel.app)
 
 ### Local Installation
 To install the project locally:
