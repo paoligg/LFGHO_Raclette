@@ -83,7 +83,7 @@ const Vault = (props: GetBalanceProps) => {
   return (
     <div className="get-gho-form">
       <h2 className="form-title">Vault</h2>
-      <p>Current Vault Balance: {userBalance?.toFixed(0)} Tokens</p>
+      <p>Current Vault Balance: {userBalance?.toFixed(0)} F-GHO</p>
       <div className="form-field">
         <input
           className="input-field"

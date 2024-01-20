@@ -8,6 +8,8 @@ import Footer from "../footer/footer";
 const LandingPage = () => {
   return (
     <div className="grid-container">
+     
+
       <div className="importantText">
         <div className="mainText">
           Play over 50+ different games with your friends or other online players

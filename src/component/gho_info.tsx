@@ -5,6 +5,7 @@ import Balance from './balance';
 import { useAccount } from 'wagmi';
 import Vault from './vault/vault';
 import GetGho from './getgho/getgho';
+import './gho_info.css'; // Import your custom CSS file
 
 const GhoInfo = (props) => {
   const [isGetGhoOpen, setIsGetGhoOpen] = useState(false);
@@ -32,49 +33,48 @@ const GhoInfo = (props) => {
   };
 
   return (
-    <div className="bg-blue-500 p-4 rounded-lg shadow-lg">
-      <h2 className="text-2xl font-semibold mb-4">GHO Information</h2>
+    
+    <div className="bg-black p-8 rounded-lg shadow-xl text-white grid grid-cols-1 md:grid-cols-2 gap-8">
+    {/* Vault Section */}
+    <div className="flex flex-col justify-between items-center p-4 h-full">
+      <img src="/images/vault_logo.png" alt="Vault" className="w-64 h-64"/>
+      <div>
+        <h1 className="text-3xl font-extrabold mb-2">Wanna play ?</h1>
+        <p className="text-lg font-light mb-4">Stake some Gho in our Vault !</p>
+      </div>
+      <button onClick={openVaultModal} className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded w-full mt-4">
+        Vault
+      </button>
+    </div>
 
-      <>
-        {/* <p className="text-lg">
-          Connected User: <span className="font-semibold">{userAddress}</span>
-        </p>
-        <p className="text-lg">
-          GHO Balance: <Balance token_Address={GHO_contract.address} user_Address="0x2ff00bC1e813E52034203107B80f0A54a4cefB71" />
-          <Vault user_Address={userAddress}  />
-        </p> */}
-
-         {/* Inside the GhoInfo component */}
-         <button onClick={openVaultModal} className="bg-blue-600 text-white py-2 px-4 rounded-lg mt-4">
-          MVault
-        </button>
-
-        {/* Modal */}
-        
-        {isVaultOpen && (
-            <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-70 z-50">
-                <div className="bg-white p-6 rounded-lg shadow-lg">
-                    <Vault user_Address={userAddress} onClose={closeVaultModal} /> {/* Pass onClose prop */}
-                </div>
-            </div>
-        )}
-
-
-        {/* Inside the GhoInfo component */}
-        <button onClick={openGetGhoModal} className="bg-blue-600 text-white py-2 px-4 rounded-lg mt-4">
-          Mint Gho from Aave
-        </button>
-
-        {/* Modal */}
-        {isGetGhoOpen && (
-          <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-70 z-50">
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <GetGho onClose={closeGetGhoModal} /> {/* Pass onClose prop */}
-            </div>
+    {/* Facilitator Section */}
+    <div className="flex flex-col justify-between items-center p-4 h-full">
+      <img src="/images/gho_logo.png" alt="GHO" className="w-78 h-64"/>
+      <div>
+        <h1 className="text-3xl font-extrabold mb-2">No more GHO?</h1>
+        <p className="text-lg font-light mb-4">You can mint some from the official facilitator Aave Pool Ethereum V3</p>
+      </div>
+      <button onClick={openGetGhoModal} className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded w-full mt-4">
+        Mint Gho
+      </button>
+    </div>
+      {isGetGhoOpen && (
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-70 z-50 text-black">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <GetGho onClose={closeGetGhoModal} />
           </div>
-        )}
+        </div>
+      )}
+      
+      {isVaultOpen && (
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-70 z-50 text-black">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <Vault onClose={closeVaultModal} user_Address={userAddress} />
+          </div>
+        </div>
+      )}
 
-      </>
+      {/* Modals remain unchanged */}
     </div>
   );
 };
