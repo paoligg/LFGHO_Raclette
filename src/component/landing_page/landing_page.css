@@ -2,13 +2,13 @@
     display: grid;
     
     grid-template-columns: 4fr 4fr 2fr;
-    grid-template-rows: 4fr 2fr 2fr 4fr;
+    grid-template-rows: 2fr 2fr 2fr 2fr 0.2fr;
     /* Define grid areas */
     grid-template-areas:
       "importantText importantText gamesCarousel"
-      "separation separation separation"
-      "teamMembers teamMembers teamMembers"
-      "howItWorks howItWorks howItWorks"
+      "teamSection teamSection teamSection"
+     
+      "how-it-works-container how-it-works-container how-it-works-container"
       "gho_info gho_info gho_info"
       "footer footer footer";
 
@@ -60,14 +60,9 @@
     padding: 20px;
   }
 
-  .separation {
-    grid-area: separation; /* Assign to the "separation" grid area */
-   
-    padding: 10px;
-  }
 
-  .howitworks {
-    grid-area: howItWorks; /* Assign to the "separation" grid area */
+  .how-it-works-container {
+    grid-area: how-it-works-container; /* Assign to the "separation" grid area */
    
     padding: 10px;
   }
@@ -79,7 +74,7 @@
   }
 
   .teamSection {
-    grid-area: teamMembers; 
+    grid-area: teamSection; 
     text-align: center; /* Center-aligns the title and team members */
     margin-bottom: 30px; /* Adds space below the entire team section */
   }
@@ -125,5 +120,58 @@
     grid-area: footer; /* Assign to the "footer" grid area */
    
     padding: 20px;
+  }
+  /* how_it_works.css */
+
+.how-it-works-container {
+    
+    padding: 2.5rem; /* Tailwind's p-10 */
+    color: white;
+    border-radius: 0.5rem; /* Tailwind's rounded-lg */
+   
+  }
+  
+  .how-it-works-title {
+    font-size: 2rem; /* Tailwind's text-3xl */
+    font-weight: bold; /* Tailwind's font-bold */
+    margin-bottom: 1.5rem; /* Tailwind's mb-6 */
+    text-decoration: underline;
+  }
+  
+  .how-it-works-heading {
+    font-size: 1.5rem; /* Tailwind's text-xl */
+    margin-bottom: 3rem; /* Tailwind's mb-4 */
+  }
+  
+  .how-it-works-subheading {
+    font-size: 1rem; /* Tailwind's text-lg */
+    margin-bottom: 1rem; /* Tailwind's mb-4 */
+  }
+  
+  .how-it-works-list {
+    display: flex;
+    gap:2em;
+    list-style-type: disc;
+    padding-left: 2rem; /* Tailwind's list-inside is similar */
+    margin-bottom: 0.5rem; /* Space between list items, similar to Tailwind's space-y-2 */
+  }
+  
+  .how-it-works-list-item {
+    margin-bottom: 0.5rem; /* Space between list items, similar to Tailwind's space-y-2 */
+  }
+  
+.simple {
+    font-weight: bold; /* Make it bold */
+    color: rgb(34,139,34);/* Give it a distinctive color */
+    font-size:2rem; /* Make the font size larger than the surrounding text */
+    margin-top: 0.5rem; /* Add some space above the emphasis text */
+  }
+  
+  /* You can also add a class for the 'Expert' text if you want it to be styled differently */
+  .expert {
+    font-weight: bold; /* Make it bold */
+    color: rgb(255,127,80); /* Different color for expert */
+    font-size: 2rem; /* Same larger font size for consistency */
+    margin-top: 0.5rem; /* Add some space above the emphasis text */
   }
   

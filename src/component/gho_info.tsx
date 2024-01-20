@@ -5,7 +5,6 @@ import Balance from './balance';
 import { useAccount } from 'wagmi';
 import Vault from './vault/vault';
 import GetGho from './getgho/getgho';
-import './gho_info.css'; // Import your custom CSS file
 
 const GhoInfo = (props) => {
   const [isGetGhoOpen, setIsGetGhoOpen] = useState(false);

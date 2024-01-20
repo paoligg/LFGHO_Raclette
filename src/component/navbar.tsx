@@ -22,7 +22,7 @@ function Navbar() {
       <div className="flex items-center space-x-4">
         {account!=undefined ? (
           <Balance user_Address={account}/>
-        ): null}
+      ): null}
         
         <ConnectKitButton />
       </div>
