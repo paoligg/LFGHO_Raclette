@@ -198,6 +198,7 @@
     opacity: 0; /* Logo is invisible initially */
     transition: opacity 0.3s ease;
     z-index: 2; /* Bring it in front of the image */
+    pointer-events: none; 
   }
   
   .teamMember:hover::after {
