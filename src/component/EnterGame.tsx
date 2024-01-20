@@ -3,8 +3,6 @@ import { Vault_Contract, GHO_contract } from './contracts';
 import { useAccount, useWaitForTransaction, useContractWrite } from 'wagmi';
 import React from 'react';
 
-
-
 const EnterGame = ({ gameid }: { gameid: number }) => {
     const { address: account } = useAccount();
 

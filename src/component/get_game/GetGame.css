@@ -12,7 +12,6 @@
     transition: 0.5s;
     color: rgb(0, 0, 0);
     box-shadow: 3px -3px rgb(95, 38, 17), 0px 0px 50px rgba(255, 127, 80, 1);
-
 }
 
 .game:hover {
@@ -64,7 +63,6 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.9);
-    /* Black background with some opacity */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -74,5 +72,4 @@
     background: white;
     padding: 20px;
     border-radius: 5px;
-    /* Add more styles as needed */
 }

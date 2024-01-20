@@ -1,0 +1,193 @@
+.grid-container {
+    display: grid;
+    
+    grid-template-columns: 4fr 4fr 2fr;
+    grid-template-rows: 2.5fr 2fr 2fr 2fr 0.2fr;
+    grid-template-areas:
+      "importantText importantText gamesCarousel"
+      "teamSection teamSection teamSection"
+      "how-it-works-container how-it-works-container how-it-works-container"
+      "gho_info gho_info gho_info"
+      "footer footer footer";
+      grid-gap: 3%;
+      padding:2%;
+    }
+  
+  .importantText {
+    grid-area: importantText;
+    color : rgb(255,127,80);
+    padding: 20px;
+    display:flex ;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .mainText {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .subText {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .callToAction {
+    font-size: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .callToAction:hover {
+    background-color: #555;
+  }
+  .gamesCarousel {
+    display:flex;
+    grid-area: gamesCarousel;
+    padding: 20px;
+  }
+
+
+  .how-it-works-container {
+    grid-area: how-it-works-container;
+    padding: 10px;
+  }
+  
+  .gho_info {
+    grid-area: gho_info;
+    padding: 20px;
+  }
+
+  .teamSection {
+    grid-area: teamSection; 
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .teamMembers {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    background-color: #000000;
+    padding: 2%;
+    border-radius: 10px;
+  }
+  
+  .teamMember {
+    flex: none;
+  }
+  
+  .roundImage {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    box-shadow:  rgb(255,127,80) 0px 0px 20px;
+    transition: filter 0.3s ease;
+  }
+  .roundImage:hover {
+    filter: blur(3px);
+  }
+  .memberName {
+    margin-top: 10px;
+    font-size: 20px;
+    color:  rgb(255,127,80);
+  }
+  .teamTitle {
+    font-size: 48px;
+    color: rgb(255,127,80);
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  .footer {
+    grid-area: footer;
+   
+    padding: 20px;
+  }
+
+.how-it-works-container {
+    
+    padding: 2.5rem;
+    color: white;
+    border-radius: 0.5rem;
+   
+  }
+  
+  .how-it-works-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-decoration: underline;
+  }
+  
+  .how-it-works-heading {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .how-it-works-subheading {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .how-it-works-list {
+    display: flex;
+    gap:2em;
+    list-style-type: disc;
+    padding-left: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .how-it-works-list-item {
+    margin-bottom: 0.5rem;
+  }
+  
+.simple {
+    font-weight: bold;
+    color: rgb(34,139,34);
+    font-size:2rem;
+    margin-top: 0.5rem;
+  }
+  
+  .expert {
+    font-weight: bold;
+    color: rgb(255,127,80);
+    font-size: 2rem;
+    margin-top: 0.5rem;
+  }
+  
+  .teamMember {
+    position: relative;
+  }
+  
+  .teamMember .roundImage {
+    transition: filter 0.3s ease;
+    z-index: 1;
+  }
+  
+  .teamMember::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/images/linkedin_logo.png') no-repeat center center;
+    background-size: 30%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+    pointer-events: none; 
+  }
+  
+  .teamMember:hover::after {
+    opacity: 1;
+  }
+  
+  .teamMember:hover .roundImage {
+    filter: blur(3px);
+  }
+  

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useContractWrite, useWaitForTransaction, useContractRead } from 'wagmi'; 
 import { GHO_contract, Vault_Contract } from '../contracts'; 
-import './vault.css'; // Import your CSS file
+import './vault.css';
 
 interface GetBalanceProps {
   user_Address: `0x${string}`;
@@ -12,7 +12,7 @@ const Vault = (props: GetBalanceProps) => {
 
   const [depositAmount, setDepositAmount] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [phase, setPhase] = useState(''); // Initialize phase to 'approval'
+  const [phase, setPhase] = useState('');
   const [userBalance, setUserBalance] = useState<number | undefined>(undefined);
 
   const {data: readData, isLoading: readLoading, isError } = useContractRead({
@@ -21,13 +21,11 @@ const Vault = (props: GetBalanceProps) => {
     functionName: 'balanceOf',
     args: [props.user_Address],
     onSuccess: (data) => {
-      // Convert BigInt to a readable number and then to JavaScript number
       const readableBalance = Number(data.toString()) * 10**-18;
       setUserBalance(readableBalance);
     },
   });
 
-  // Use the useContractWrite hook for both approve and deposit
   const { write: approveGHO, data:dataApprove } = useContractWrite({
     ...GHO_contract,
     functionName: "approve",
@@ -61,29 +59,26 @@ const Vault = (props: GetBalanceProps) => {
   };
 
   useEffect(() => {
-    // Check if the approval is successful and depositAmount is not empty
     if (dataApprove) {
       console.log("deposit amount", depositAmount);
       depositGHO({ args: [BigInt(Number(depositAmount) * 10 ** 18), props.user_Address] });
     }
   }, [approveGHOSuccess]);
 
-  // Determine the phase and set the corresponding class
   useEffect(() => {
     if (depositGHOSuccess) {
-      setPhase('done'); // Set phase to 'done' when depositGHOSuccess is true
-
+      setPhase('done');
     } else if (approveGHOSuccess) {
-      setPhase('deposit'); // Set phase to 'deposit' when approveGHOSuccess is true
+      setPhase('deposit');
     } else if (approveGHOLoading) {
-      setPhase('approval'); // Set phase to 'approval' when approveGHOLoading is true
+      setPhase('approval');
     }
   }, [approveGHOLoading, approveGHOSuccess, depositGHOSuccess]);
 
   return (
     <div className="get-gho-form">
       <h2 className="form-title">Vault</h2>
-      <p>Current Vault Balance: {userBalance?.toFixed(0)} F-GHO</p>
+      <p>Current R-GHO Balance: {userBalance?.toFixed(0)} R-GHO</p>
       <div className="form-field">
         <input
           className="input-field"

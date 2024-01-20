@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef, RefObject } from 'react';
-import { Vault_Contract, GHO_contract } from '../contracts';
-import { useAccount, useContractRead, useContractWrite } from 'wagmi';
+import React, { useState, useEffect, useRef} from 'react';
+import { Vault_Contract} from '../contracts';
+import {useContractRead } from 'wagmi';
 import EnterGame from '../EnterGame';
 import DistributeRewards from '../DistributeRewards';
 import VanillaTilt from 'vanilla-tilt';
@@ -29,9 +29,6 @@ const GetGame = ({ index, wantedGame }: { index: number; wantedGame: string }) =
                 glare: true,
                 'max-glare': 1,
             });
-
-            // Cleanup function
-            // Cleanup function
             return () => {
                 const tiltNode = card as unknown as { vanillaTilt?: { destroy: () => void } };
                 tiltNode.vanillaTilt?.destroy();

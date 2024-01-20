@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Vault_Contract, GHO_contract } from '../contracts';
-import { useAccount, useContractRead, useContractWrite } from 'wagmi';
+import { Vault_Contract} from '../contracts';
+import {useContractRead} from 'wagmi';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import CreateGame from '../creategame/CreateGame';
+import CreateGame from '../creategame/CreateGameForm';
 import GetGame from '../get_game/GetGame';
 import './gameslist.css';
 
@@ -45,7 +45,7 @@ export default function GamesList(){
             <button onClick={openModal} className=" bg-orange-950 hover:bg-orange-600 rounded-md w-4/5 text-gray-50 py-2 ">
                 Create Game
             </button>
-            <div style={{backgroundImage : `url(${backgroundImageUrl})`}} className='w-4/5 min-h-[50vh] bg-no-repeat bg-center flex flex-row p-10 mt-5 mx-5 border-orange-300 border-solid border-2 rounded-lg bg-[300px_auto] flex-wrap'>
+            <div style={{backgroundImage : `url(${backgroundImageUrl})`}} className='w-4/5 min-h-[50vh] bg-no-repeat bg-center flex flex-row p-10 mt-5 mx-5 rounded-lg bg-[300px_auto] flex-wrap'>
                 {isModalOpen && (
                     <div className="modal">
                         <div className="modal-content">
@@ -59,12 +59,6 @@ export default function GamesList(){
                         <GetGame key={num} index={num} wantedGame={wantedname} />
                     ))}
                 </div>
-            
-                {Array.from({ length: gamesnumber }, (_, num) => (
-                <div key={num}>
-                    <GetGame index={num} wantedGame={wantedname}  />
-                </div>
-                ))}
             </div>
         </div>
     );

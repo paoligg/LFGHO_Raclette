@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './global.css';
 import JoinGame from './JoinGame'; 
-import LandingPage from './component/landing_page/landing_page.tsx';
+import LandingPage from './component/landingpage/LandingPage.tsx';
 import Layout from './layout';
 import GamesList from './component/gameslist/GamesList.tsx';
 

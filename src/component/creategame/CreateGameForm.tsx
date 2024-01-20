@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAccount, useContractWrite } from 'wagmi';
 import { Vault_Contract } from '../contracts';
-import './creategame.css'; 
+import './creategameform.css'; 
 
 interface GetGameProps {
     gamename: string;

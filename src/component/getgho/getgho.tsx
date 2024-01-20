@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { AAVE_Pool_GHO, AAVE_Deposit_ETH, GHO_Proxy, GHO_contract } from '../contracts';
+import { AAVE_Deposit_ETH, GHO_Proxy, GHO_contract } from '../contracts';
 import { useAccount, useContractWrite } from 'wagmi';
 import React from 'react';
-import './getgho.css'; // Import your CSS file
+import './getgho.css';
 
 const GetGho = ({ onClose }) => {
     const { address: account } = useAccount();

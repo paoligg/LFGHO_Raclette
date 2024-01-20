@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
-import { useContractRead } from 'wagmi';
-import { GHO_contract } from './contracts';
-import Balance from './balance';
 import { useAccount } from 'wagmi';
-import Vault from './vault/vault';
-import GetGho from './getgho/getgho';
+import Vault from './vault/Vault';
+import GetGho from './getgho/Getgho';
 
 const GhoInfo = (props) => {
   const [isGetGhoOpen, setIsGetGhoOpen] = useState(false);
@@ -73,7 +70,6 @@ const GhoInfo = (props) => {
         </div>
       )}
 
-      {/* Modals remain unchanged */}
     </div>
   );
 };

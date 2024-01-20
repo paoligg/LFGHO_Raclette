@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import VanillaTilt from 'vanilla-tilt'; // Import VanillaTilt
-import './DisplayCards.css'; // Import your CSS file
+import VanillaTilt from 'vanilla-tilt';
+import './gamescarroussel.css';
 import { useNavigate } from 'react-router-dom';
 
 const logosData = [
@@ -45,9 +45,8 @@ export function DisplayCards() {
 
   const navigate = useNavigate();
 
-  // Modifier les fonctions onClick pour chaque jeu
   logosData.forEach(logo => {
-      logo.onClick = () => navigate(`/JoinGame/${logo.wantedName}`); // Assurez-vous que le chemin correspond à votre route
+      logo.onClick = () => navigate(`/JoinGame/${logo.wantedName}`);
     }
   );
   
@@ -63,7 +62,6 @@ export function DisplayCards() {
     });
   }, []);
 
-  // Rotate cards function
   const rotateCards = () => {
     const nextIndex = (cardIndices[cardIndices.length - 1] + 1) % logosData.length;
     const newIndices = [...cardIndices.slice(1), nextIndex];

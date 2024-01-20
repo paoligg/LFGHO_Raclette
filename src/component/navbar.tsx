@@ -1,6 +1,6 @@
 import React from 'react';
 import { ConnectKitButton } from 'connectkit';
-import Balance from './balance';
+import Balance from './Balance';
 import { useNavigate } from 'react-router-dom';
 import { useAccount } from 'wagmi';
 
@@ -16,7 +16,7 @@ function Navbar() {
       <div className="flex items-center ml-5">
         <button onClick={handleRedirectToHome} className="flex items-center">
           <img src="/images/logo.png" height="120" width="120" />
-          <span className="text-lg font-bold ml-8 text-4xl">LFRaclette</span>
+            <span className="text-lg font-bold ml-8 text-5xl" style={{ fontSize: "110px" }}>LFRaclette</span>
         </button>
       </div>
       
