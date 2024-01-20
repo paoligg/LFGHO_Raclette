@@ -3,6 +3,7 @@ import { Link as ScrollLink } from 'react-scroll';
 import './landing_page.css';
 import DisplayCards from '../games_carrousel/games';
 import GhoInfo from '../gho_info';
+import VaultInfo from '../vault_info/Vault_info';
 
 const LandingPage = () => {
   return (
@@ -14,8 +15,10 @@ const LandingPage = () => {
           Play over 50+ different games with your friends or other online players
         </div>
         <div className="subText">Featuring GHO, the stablecoin from Aave</div>
+        
+        <div className="mainText text-white border p-4"><VaultInfo/></div>
         <ScrollLink to="gho_info" smooth={true} duration={1000}>
-          <div className="callToAction">Get some GHO now !</div>
+          <div className="callToAction">Get some R-GHO now !</div>
         </ScrollLink>
       </div>
 

@@ -19,6 +19,7 @@ function Navbar() {
           <span className="text-lg font-bold ml-8 text-4xl">LFRaclette</span>
         </button>
       </div>
+      
       <div className="flex items-center space-x-4">
         {account!=undefined ? (
           <Balance user_Address={account}/>
