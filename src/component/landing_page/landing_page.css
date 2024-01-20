@@ -193,7 +193,7 @@
     left: 0;
     width: 100%; /* Cover the entire container */
     height: 100%; /* Cover the entire container */
-    background: url('../../../public/images/linkedin_logo.png') no-repeat center center; /* Use the correct path */
+    background: url('/images/linkedin_logo.png') no-repeat center center; /* Use the correct path */
     background-size: 30%; /* Adjust size of logo */
     opacity: 0; /* Logo is invisible initially */
     transition: opacity 0.3s ease;
