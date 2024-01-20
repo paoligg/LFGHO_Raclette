@@ -40,7 +40,7 @@ We are passionate about creating a new use for the GHO token. We developed a gam
 
 - **ConnectKit:** A toolset for easily integrating wallet connection functionality in Web3 applications, enhancing user experience with blockchain interaction.
 - **React.js:** A JavaScript library for building user interfaces, known for its efficient and flexible way of rendering dynamic content.
-- **Vite.js:** A modern frontend build tool that significantly improves the development experience, offering fast server start and hot module replacement.
+- **Vite.js:** A modern frontend build tool that significantly improves the development experience, offering fast server start and hot module replacement. Special Thanks to [@claudioantonio](https://github.com/claudioantonio/connectkitdemo) whose Connectkitdemo has been really helpful to start. 
 - **TypeScript:** An open-source language that builds on JavaScript by adding static type definitions, helping with catching errors and providing a more robust coding environment.
 - **CSS:** Cascading Style Sheets, a language used to style and layout web pages, such as changing fonts, colors, and spacing.
 - **Tailwind:** A utility-first CSS framework for rapidly building custom designs without leaving your HTML.
