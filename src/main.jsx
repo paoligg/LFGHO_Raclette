@@ -6,19 +6,14 @@ import { sepolia } from "wagmi/chains";
 import { ConnectKitProvider, getDefaultConfig } from "connectkit";
 import './global.css';
 
-
-// Choose which chains you'd like to show
 const chains = [sepolia];
 
-// wallet connection
 const config = createConfig(
   getDefaultConfig({
-    // Required API Keys
-    alchemyId: import.meta.env.VITE_APP_ALCHEMY_ID, // or infuraId
+    alchemyId: import.meta.env.VITE_APP_ALCHEMY_ID, 
     walletConnectProjectId: import.meta.env.VITE_APP_WALLETCONNECT_PROJECT_ID,
     chains,
-    // Required
-    appName: "connectkitdemo",
+    appName: "lfraclette",
   }),
 );
 
