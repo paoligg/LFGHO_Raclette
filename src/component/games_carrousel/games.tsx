@@ -12,9 +12,9 @@ const logosData = [
     },
   },
   {
-    name: 'Colonist',
-    wantedName: 'colonist',
-    imageSrc: 'images/colonist.png',
+    name: 'Catan',
+    wantedName: 'catan',
+    imageSrc: 'images/catan.png',
     onClick: () => {
     },
   },
@@ -22,6 +22,20 @@ const logosData = [
     name: 'Chess',
     wantedName: 'chess',
     imageSrc: 'images/chess.png',
+    onClick: () => {
+    },
+  },
+   {
+    name: 'Poker',
+    wantedName: 'poker',
+    imageSrc: 'images/poker.png',
+    onClick: () => {
+    },
+  },
+   {
+    name: 'Monopoly',
+    wantedName: 'monopoly',
+    imageSrc: 'images/monopoly.png',
     onClick: () => {
     },
   },
@@ -37,52 +51,45 @@ export function DisplayCards() {
     }
   );
   
-  const [cardIndices, setCardIndices] = useState([0, 1, 2]);
+   const [cardIndices, setCardIndices] = useState([0, 1, 2]);
 
   useEffect(() => {
-    // Convert the NodeListOf<Element> to an array of HTMLElements
     const cardElements = Array.from(document.querySelectorAll(".card")) as HTMLElement[];
-
-    // Initialize VanillaTilt with the array of elements
     VanillaTilt.init(cardElements, {
       max: 25,
       speed: 400,
       glare: true,
       'max-glare': 1,
     });
-  }, []); // Empty dependency array ensures it runs once after the initial render
+  }, []);
 
+  // Rotate cards function
   const rotateCards = () => {
-    // Rotate the indices of the cards
-    const rotatedIndices = [cardIndices[1], cardIndices[2], cardIndices[0]];
-    setCardIndices(rotatedIndices);
+    const nextIndex = (cardIndices[cardIndices.length - 1] + 1) % logosData.length;
+    const newIndices = [...cardIndices.slice(1), nextIndex];
+    setCardIndices(newIndices);
   };
 
   return (
     <div className="container">
       {cardIndices.map((index) => (
-        <div
-          key={index}
-          className='card'
-          data-tilt // Add this attribute for VanillaTilt to recognize the element
-        >
+        <div key={index} className='card' data-tilt>
           <a href="" onClick={logosData[index].onClick}> 
             <div className='content'>
               <img
                 src={logosData[index].imageSrc}
                 alt={logosData[index].name}
-                style={{ width: '80%', height: 'auto' , padding: '10px'}}
+                style={{ width: '80%', height: 'auto', padding: '10px' }}
               />
               <h3>{logosData[index].name}</h3>
               <h2>Play !</h2>
-              
             </div>
           </a>
         </div>
       ))}
-      <button className='button' onClick={rotateCards}>Rotate Cards</button>
+      <button className='button' onClick={rotateCards}>More Games</button>
     </div>
-    );
+  );
 };
 
 export default DisplayCards;

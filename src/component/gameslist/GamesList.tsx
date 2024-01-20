@@ -7,7 +7,7 @@ import CreateGame from '../creategame/CreateGame';
 import GetGame from '../get_game/GetGame';
 import './gameslist.css';
 
-const GamesList = () => {
+export default function GamesList(){
     const { wantedname } = useParams();
     const navigate = useNavigate();
     if (wantedname === undefined) {
@@ -26,18 +26,18 @@ const GamesList = () => {
             console.log("number of games: ", numberGames);
         }
     }, [numberGames]);
-    
+
     const [isModalOpen, setIsModalOpen] = useState(false);
     const openModal = () => {
         setIsModalOpen(true);
-      };
-    
-      const closeModal = () => {
+    };
+
+    const closeModal = () => {
         setIsModalOpen(false);
-      };
+    };
 
 
-      const backgroundImageUrl = `/images/${wantedname}.png`;
+    const backgroundImageUrl = `/images/${wantedname}.png`;
 
       return (
         <div className="flex items-center flex-col">
@@ -46,22 +46,26 @@ const GamesList = () => {
                 Create Game
             </button>
             <div style={{backgroundImage : `url(${backgroundImageUrl})`}} className='w-4/5 min-h-[50vh] bg-no-repeat bg-center flex flex-row p-10 mt-5 mx-5 border-orange-300 border-solid border-2 rounded-lg bg-[300px_auto] flex-wrap'>
-            {isModalOpen && (
-                <div className="modal">
-                    <div className="modal-content">
-                        <CreateGame gamename={wantedname} onClose={closeModal} />
+                {isModalOpen && (
+                    <div className="modal">
+                        <div className="modal-content">
+                            <CreateGame gamename={wantedname} onClose={closeModal} />
+                        </div>
                     </div>
+                )}
+
+                <div className="games-grid">
+                    {Array.from({ length: gamesnumber }, (_, num) => (
+                        <GetGame key={num} index={num} wantedGame={wantedname} />
+                    ))}
                 </div>
-            )}
-    
+            
                 {Array.from({ length: gamesnumber }, (_, num) => (
-                  <div key={num}>
+                <div key={num}>
                     <GetGame index={num} wantedGame={wantedname}  />
-                  </div>
+                </div>
                 ))}
             </div>
         </div>
     );
 };
-
-export default GamesList;
