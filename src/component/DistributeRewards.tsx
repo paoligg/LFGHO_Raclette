@@ -36,27 +36,29 @@ const DistributeRewards = ({ gameid, numberOfPlayers, onClose }: { gameid: numbe
 
     return (
         <div>
-            <button onClick={() => setIsModalOpen(true)}>Distribute Rewards</button>
+            <button onClick={() => setIsModalOpen(true)} style={{ backgroundColor: '#333', color:'white', borderRadius: '5px', padding:'10px'}}>Distribute Rewards</button>
             {isModalOpen && (
-                <div className="modal">
-                    <div className="modal-content">
-                        <form onSubmit={handleSubmit}>
-                            {addresses.map((address, index) => (
-                                <div key={index}>
-                                    <label>Player n° {index + 1} Address:</label>
-                                    <input
-                                        type="text"
-                                        value={address}
-                                        onChange={(e) => handleInputChange(index, e.target.value)}
-                                    />
-                                </div>
-                            ))}
-                            <button type="submit">Submit</button>
-                        </form>
-                        <button onClick={() => setIsModalOpen(false)}>Close</button>
-                    </div>
-                </div>
-            )}
+  <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
+    <div className="bg-white p-6 rounded-lg shadow-xl">
+      <form onSubmit={handleSubmit} className="space-y-4">
+        {addresses.map((address, index) => (
+          <div key={index} className="flex flex-col">
+            <label className="mb-2 font-semibold">Player n° {index + 1} Address:</label>
+            <input
+              type="text"
+              value={address}
+              onChange={(e) => handleInputChange(index, e.target.value)}
+              className="border border-gray-300 rounded p-2"
+            />
+          </div>
+        ))}
+        <button type="submit" className="w-full bg-blue-500 text-white rounded p-2 hover:bg-blue-600">Submit</button>
+      </form>
+      <button onClick={() => setIsModalOpen(false)} className="mt-4 w-full bg-red-500 text-white rounded p-2 hover:bg-red-600">Close</button>
+    </div>
+  </div>
+)}
+
         </div>
     );
 };

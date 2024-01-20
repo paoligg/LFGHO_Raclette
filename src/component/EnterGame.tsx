@@ -33,7 +33,7 @@ const EnterGame = ({ gameid }: { gameid: number }) => {
 
     return (
         <div>
-            <button onClick={() => handleJoinGame()}>Enter Game</button>
+            <button onClick={() => handleJoinGame()} style={{ backgroundColor: '#333', color:'white', borderRadius: '5px', padding:'10px'}}>Enter Game</button>
         </div>
     );
 };
