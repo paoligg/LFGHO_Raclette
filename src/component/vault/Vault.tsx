@@ -14,6 +14,7 @@ const Vault = (props: GetBalanceProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [phase, setPhase] = useState('');
   const [userBalance, setUserBalance] = useState<number | undefined>(undefined);
+  const [withdrawAmount, setWithdrawAmount] = useState('');
 
   const {data: readData, isLoading: readLoading, isError } = useContractRead({
     address: Vault_Contract.address,
@@ -52,6 +53,23 @@ const Vault = (props: GetBalanceProps) => {
     if (depositAmount) {
       try {
         await approveGHO({ args: [Vault_Contract.address, BigInt(Number(depositAmount) * 10 ** 18)] });
+        setIsLoading(true);
+      } catch (error) {
+        console.error('Transaction error:', error);
+      }
+    }
+  };
+
+  const { write: withdrawGHO, data: dataWithdraw } = useContractWrite({
+    ...Vault_Contract,
+    functionName: "withdraw",
+  });
+
+  const handleWithdraw = async () => {
+    if (withdrawAmount) {
+      try {
+        await withdrawGHO({ args: [BigInt(Number(withdrawAmount) * 10 ** 18),props.user_Address, props.user_Address]});
+        setIsLoading( true)
       } catch (error) {
         console.error('Transaction error:', error);
       }
@@ -68,6 +86,7 @@ const Vault = (props: GetBalanceProps) => {
   useEffect(() => {
     if (depositGHOSuccess) {
       setPhase('done');
+      setIsLoading(false);
     } else if (approveGHOSuccess) {
       setPhase('deposit');
     } else if (approveGHOLoading) {
@@ -105,7 +124,18 @@ const Vault = (props: GetBalanceProps) => {
           </div>
         </div>
       <button className="close-button" onClick={props.onClose}>Close</button>
-      
+      <div className="form-field">
+        <input
+          className="input-field"
+          type="text"
+          placeholder="Enter withdraw amount"
+          value={withdrawAmount}
+          onChange={(e) => setWithdrawAmount(e.target.value)}
+        />
+        <button className="action-button" onClick={handleWithdraw} disabled={isLoading }>
+          {isLoading ? 'Loading...' : ( 'Withdraw' )}
+        </button>
+      </div>
     </div>
   );
 };
