@@ -5,6 +5,7 @@ import { WagmiConfig, createConfig } from "wagmi";
 import { sepolia } from "wagmi/chains";
 import { ConnectKitProvider, getDefaultConfig } from "connectkit";
 import './global.css';
+import theme from '../theme.json';
 
 const chains = [sepolia];
 
@@ -21,7 +22,7 @@ const config = createConfig(
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <WagmiConfig config={config}>
-        <ConnectKitProvider theme="retro">
+        <ConnectKitProvider customTheme={theme}>
           <App />
         </ConnectKitProvider>
       </WagmiConfig>
