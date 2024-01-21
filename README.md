@@ -2,11 +2,11 @@
 
 ## Overview
 
-LFGHO Raclette is a Web3 project developed for the LFGHO Hackathon. This project leverages blockchain technology to innovate in the use of Vault to create new features for the GHO Token. Our platform consists of two main components: the front-end application (found in this repository) and the smart contracts that handle the blockchain interactions (found in our [Smart Contracts Repository](https://github.com/AntoineSirot/LFGHO_Raclette_SmartContracts)).
+LFGHO Raclette is a Web3 project developed for the LFGHO Hackathon. This project leverages blockchain technology to innovate in the use of Vault to create new features for the [GHO Token](https://sepolia.etherscan.io/address/0xc4bF5CbDaBE595361438F8c6a187bDc330539c60). Our platform consists of two main components: the front-end application (found in this repository) and the smart contracts that handle the blockchain interactions (found in our [Smart Contracts Repository](https://github.com/AntoineSirot/LFGHO_Raclette_SmartContracts) or at this Address : [0xD18D03cF7D79a3f9B51D3595db169cfCcC3E862A](https://sepolia.etherscan.io/address/0xd18d03cf7d79a3f9b51d3595db169cfccc3e862a)).
 
 ## Team 
 
-We are the LFGHO Raclette team, composed of 5 friends working together on this project. As students, we learned a lot during these last 10 days, realizing our potential when motivated and cooperative.
+We are the LFGHO Raclette team, composed of 5 friends working together on this project. As students, we learnt a lot during these last 10 days, realizing our potential when motivated and cooperative.
 
 ## How does it work? 
 
@@ -31,11 +31,16 @@ We are passionate about creating a new use for the GHO token. We developed a gam
 - **Footer:** A standard footer with the date and GitHub repository link.
 
 ## Technology Stack
+
+### General Architecture
+
+![LFRaclette_Architecture](https://github.com/paoligg/LFGHO_Raclette/assets/101109062/6e8c6ee9-c247-4b1c-a2d3-f4cf181e7364)
+
 ### Frontend Technologies
 
 - **ConnectKit:** A toolset for easily integrating wallet connection functionality in Web3 applications, enhancing user experience with blockchain interaction.
 - **React.js:** A JavaScript library for building user interfaces, known for its efficient and flexible way of rendering dynamic content.
-- **Vite.js:** A modern frontend build tool that significantly improves the development experience, offering fast server start and hot module replacement.
+- **Vite.js:** A modern frontend build tool that significantly improves the development experience, offering fast server start and hot module replacement. Special Thanks to [@claudioantonio](https://github.com/claudioantonio/connectkitdemo) whose Connectkitdemo has been really helpful to start. 
 - **TypeScript:** An open-source language that builds on JavaScript by adding static type definitions, helping with catching errors and providing a more robust coding environment.
 - **CSS:** Cascading Style Sheets, a language used to style and layout web pages, such as changing fonts, colors, and spacing.
 - **Tailwind:** A utility-first CSS framework for rapidly building custom designs without leaving your HTML.
@@ -62,7 +67,7 @@ These technologies collectively provide a robust framework for building, testing
 ## Getting Started
 ### Deployed Project
 
-Our project is deployed on Vercel for easy access: [Deployed Project Link](https://vercel.com/link-to-your-project)
+Our project is deployed on Vercel for easy access: [Deployed Project Link](https://lfraclette.vercel.app)
 
 ### Local Installation
 To install the project locally:
